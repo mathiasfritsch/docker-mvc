@@ -29,19 +29,22 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
+      enabled: false
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-              $(tag)
+        tags: $(tag)
     - task: AzureWebAppContainer@1
       inputs:
-        azureSubscription: 'Azure subscription 1 (25010af9-7f24-4aca-9123-f7054c0566f7)'
-        appName: 'webappmfritsch'
-        containers: 'mathiasfritschregistry.azurecr.io/dockermvc:latest'
+        azureSubscription: azure_subscription_mfritsch
+        scriptType: ps
+        scriptLocation: inlineScript
+        inlineScript: |
+          az --version
+          az account show
 
 
 
