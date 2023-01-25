@@ -40,7 +40,7 @@ stages:
     - task: AzureWebAppContainer@1
       inputs:
         azureSubscription: 'Azure subscription 1 (25010af9-7f24-4aca-9123-f7054c0566f7)'
-        appName: 'mvc-app-mfritsch'
+        appName: 'mvcappmfritsch'
         containers: 'mathiasfritschregistry.azurecr.io/dockermvc:latest'
 
 
