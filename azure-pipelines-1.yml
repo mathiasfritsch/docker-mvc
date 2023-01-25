@@ -42,9 +42,7 @@ stages:
         azureSubscription: azure_subscription_mfritsch
         scriptType: pscore
         scriptLocation: inlineScript
-        inlineScript: |
-          az --version
-          az account show
+        inlineScript: az container create --resource-group ContainerResource --name mvc-container-instance --image mfritschregistry.azurecr.io/dockermvc --cpu 1 --memory 1 --registry-login-server mfritschregistry.azurecr.io --registry-username mfritschregistry --registry-password 6Ir5yvYpMUqle+xS9pTZK9PYBEp4rLPtWb/GG0ZTJZ+ACRB22QtC --ip-address Public --dns-name-label mfritsch-container-instance --ports 80
 
 
 
