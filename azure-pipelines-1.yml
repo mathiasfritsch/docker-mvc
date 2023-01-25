@@ -40,7 +40,7 @@ stages:
     - task: AzureCLI@2
       inputs:
         azureSubscription: azure_subscription_mfritsch
-        scriptType: ps
+        scriptType: pscore
         scriptLocation: inlineScript
         inlineScript: |
           az --version
